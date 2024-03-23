@@ -1,0 +1,64 @@
+.contactBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.contactBox:hover {
+  background-color: #fafafa;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.contact,
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 270px;
+}
+
+.contact {
+  font-weight: 700;
+  color: #595959;
+}
+
+.phone {
+  font-size: 15px;
+  color: #6c757d;
+}
+
+.iconContact {
+  width: 25px;
+  height: 25px;
+  color: #32b1c0;
+}
+
+.iconPhone {
+  width: 17px;
+  height: 17px;
+  color: #83aff6;
+}
+
+.deleteBtn {
+  border: 0;
+  background-color: transparent;
+  line-height: 0;
+}
+
+.iconBtn {
+  width: 25px;
+  height: 25px;
+  color: #f4769b;
+  transition: 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.iconBtn:hover,
+.iconBtn:focus {
+  opacity: 1;
+  transform: scale(1.2);
+}
