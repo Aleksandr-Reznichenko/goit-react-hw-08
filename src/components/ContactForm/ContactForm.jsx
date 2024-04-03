@@ -41,55 +41,61 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
       validationSchema={ContactFormSchema}
     >
-      <Form autoComplete="off">
-        <div className={css.addContact}>
-          <h2>New contact</h2>
-          <div className={css.inputBox}>
-            <div className={css.inputWrapper}>
-              <Field
-                type="text"
-                name="contactName"
-                id={contactNameId}
-                placeholder=" "
-              />
-              <label htmlFor="contactNameId">Name</label>
+      {({ setFieldValue }) => (
+        <Form autoComplete="off">
+          <div className={css.addContact}>
+            <h2>New contact</h2>
+            <div className={css.inputBox}>
+              <div className={css.inputWrapper}>
+                <Field
+                  type="text"
+                  name="contactName"
+                  id={contactNameId}
+                  placeholder=" "
+                />
+                <label htmlFor={contactNameId}>Name</label>
+              </div>
+              <div>
+                <ErrorMessage
+                  name="contactName"
+                  component="span"
+                  className={css.errorMsg}
+                />
+              </div>
             </div>
-            <div>
-              <ErrorMessage
-                name="contactName"
-                component="span"
-                className={css.errorMsg}
-              />
-            </div>
-          </div>
 
-          <div className={css.inputBox}>
-            <div className={css.inputWrapper}>
-              <Field
-                type="tel"
-                name="phoneNumber"
-                id={phoneNumberId}
-                placeholder=" "
-              />
-              <label htmlFor="phoneNumberId">Phone Number</label>
+            <div className={css.inputBox}>
+              <div className={css.inputWrapper}>
+                <Field
+                  type="text"
+                  name="phoneNumber"
+                  id={phoneNumberId}
+                  placeholder=" "
+                  onChange={e => {
+                    const filteredValue = e.target.value.replace(/[^\d-]/g, '');
+                    setFieldValue('phoneNumber', filteredValue);
+                  }}
+                />
+                <label htmlFor={phoneNumberId}>Phone Number</label>
+              </div>
+              <div>
+                <ErrorMessage
+                  name="phoneNumber"
+                  component="span"
+                  className={css.errorMsg}
+                />
+              </div>
             </div>
-            <div>
-              <ErrorMessage
-                name="phoneNumber"
-                component="span"
-                className={css.errorMsg}
-              />
-            </div>
-          </div>
 
-          <button className={css.addContactBtn} type="submit">
-            <div className={css.textBtn}>
-              <IoMdAddCircleOutline className={css.iconBtn} />
-              Add contact
-            </div>
-          </button>
-        </div>
-      </Form>
+            <button className={css.addContactBtn} type="submit">
+              <div className={css.textBtn}>
+                <IoMdAddCircleOutline className={css.iconBtn} />
+                Add contact
+              </div>
+            </button>
+          </div>
+        </Form>
+      )}
     </Formik>
   );
 }
