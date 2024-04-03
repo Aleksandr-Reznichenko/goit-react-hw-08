@@ -1,6 +1,7 @@
 .box {
   display: flex;
   position: relative;
+  font-size: 14px;
 }
 
 .icon {
@@ -8,21 +9,27 @@
   top: 56%;
   transform: translateY(-50%);
   left: 10px;
-  color: #6c757d;
+  color: #31343e;
 }
 
 .field {
-  padding: 8px 120px 8px 34px;
+  padding: 8px 150px 8px 34px;
   width: 100%;
-  border-radius: 6px;
-  border: 2px solid #dfdfdf;
-  color: #6c757d;
+  border-radius: 3px;
+  border: 1px solid #31343e;
+  color: #31343e;
+  background-color: transparent;
+}
+
+.field::placeholder {
+  color: #31343e;
 }
 
 .contactCount {
   position: absolute;
   top: 50%;
-  right: 26px;
+  right: 10px;
   transform: translateY(-50%);
   cursor: default;
+  font-size: 12px;
 }

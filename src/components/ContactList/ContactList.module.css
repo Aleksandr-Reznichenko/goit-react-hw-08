@@ -1,11 +1,31 @@
+.contactList {
+  overflow-y: auto;
+}
+
 .list {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
-  border-radius: 6px;
-  border: 2px solid #dfdfdf;
+  background-color: transparent;
+  margin-right: 10px;
 }
 
 .item:not(:last-child) {
-  border-bottom: 2px solid #dfdfdf;
+  border-bottom: 1px solid #c8dbfa;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

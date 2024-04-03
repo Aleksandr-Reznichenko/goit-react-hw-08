@@ -1,23 +1,22 @@
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contactsOps';
-
+import { addContact } from '../../redux/contacts/operations';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useId } from 'react';
 import * as Yup from 'yup';
 
-import { BiSolidContact } from 'react-icons/bi';
+import { IoMdAddCircleOutline } from 'react-icons/io';
 
 import css from './ContactForm.module.css';
 
 const ContactFormSchema = Yup.object().shape({
   contactName: Yup.string()
-    .min(3, 'Too few characters! Please provide more information!')
-    .max(50, 'Too long! Please limit the input!')
-    .required('Field is required and cannot be empty'),
+    .min(3, 'Must be at least 3 characters long!')
+    .max(30, 'Must be no more than 30 characters!')
+    .required('This field is required!'),
   phoneNumber: Yup.string()
-    .min(3, 'Min value 3.')
-    .max(30, 'Max value 30.')
-    .required('Field is required and cannot be empty'),
+    .min(3, 'Must be at least 3 characters long!')
+    .max(30, 'Must be no more than 30 characters!')
+    .required('This field is required!'),
 });
 
 const initialValues = {
@@ -42,48 +41,53 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
       validationSchema={ContactFormSchema}
     >
-      <Form className={css.form}>
+      <Form autoComplete="off">
         <div className={css.addContact}>
-          <div className={css.fieldBox}>
-            <label htmlFor="contactNameId">Contact name</label>
-            <Field
-              type="text"
-              name="contactName"
-              id={contactNameId}
-              placeholder="Enter contact name"
-            />
-            <ErrorMessage
-              name="contactName"
-              component="span"
-              className={css.errorMsg}
-            />
+          <h2>New contact</h2>
+          <div className={css.inputBox}>
+            <div className={css.inputWrapper}>
+              <Field
+                type="text"
+                name="contactName"
+                id={contactNameId}
+                placeholder=" "
+              />
+              <label htmlFor="contactNameId">Name</label>
+            </div>
+            <div>
+              <ErrorMessage
+                name="contactName"
+                component="span"
+                className={css.errorMsg}
+              />
+            </div>
           </div>
 
-          <div className={css.fieldBox}>
-            <label htmlFor="phoneNumberId">Phone number</label>
-            <Field
-              type="number"
-              name="phoneNumber"
-              id={phoneNumberId}
-              placeholder="Enter phone number"
-            />
-            <ErrorMessage
-              name="phoneNumber"
-              component="span"
-              className={css.errorMsg}
-            />
+          <div className={css.inputBox}>
+            <div className={css.inputWrapper}>
+              <Field
+                type="tel"
+                name="phoneNumber"
+                id={phoneNumberId}
+                placeholder=" "
+              />
+              <label htmlFor="phoneNumberId">Phone Number</label>
+            </div>
+            <div>
+              <ErrorMessage
+                name="phoneNumber"
+                component="span"
+                className={css.errorMsg}
+              />
+            </div>
           </div>
 
-          <button className={css.formBtn} type="submit">
-            Add contact
+          <button className={css.addContactBtn} type="submit">
+            <div className={css.textBtn}>
+              <IoMdAddCircleOutline className={css.iconBtn} />
+              Add contact
+            </div>
           </button>
-        </div>
-        <div className={css.hero}>
-          <h1 className={css.title}>
-            <BiSolidContact className={css.iconTitle} />
-            Phone Book
-          </h1>
-          <div className={css.imgForm}></div>
         </div>
       </Form>
     </Formik>

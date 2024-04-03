@@ -1,0 +1,12 @@
+.navigation {
+  display: flex;
+  gap: 10px;
+}
+
+.isActive {
+  font-weight: 700;
+  background-image: linear-gradient(-90deg, #41aae8, #41c5d5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

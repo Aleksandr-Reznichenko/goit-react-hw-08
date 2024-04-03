@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  min-height: 50px;
+  background-color: #2a497b;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: white;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.auth {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+}

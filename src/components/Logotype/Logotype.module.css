@@ -1,0 +1,19 @@
+.logotype {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  color: #41c5d5;
+}
+
+.logotype p {
+  font-weight: 700;
+  background-image: linear-gradient(-90deg, #41aae8, #41c5d5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

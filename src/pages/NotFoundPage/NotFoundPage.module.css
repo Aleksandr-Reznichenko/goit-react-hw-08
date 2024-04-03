@@ -1,0 +1,65 @@
+.main {
+  padding: 20px;
+  height: 100%;
+  border: 3px solid #2a497b;
+  border-top: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+  background-color: #e6effd;
+}
+
+.img {
+  position: absolute;
+  right: 70px;
+  bottom: -14px;
+  min-width: 400px;
+  height: 283px;
+  background-image: url(../../assets/404-img.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 375px),
+  screen and (min-resolution: 2dppx) and (min-width: 375px),
+  screen and (min-device-pixel-ratio: 2) and (min-width: 375px) {
+  .img {
+    background-image: url('../../assets/404-img.png');
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #31343e;
+}
+
+.description h2 {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.description ul {
+  margin-top: 4px;
+  padding-left: 40px;
+  list-style-type: disc;
+}
+
+.backLink {
+  padding: 8px 32px;
+  width: fit-content;
+  background: linear-gradient(-90deg, #41aae8, #41c5d5);
+  border: 0;
+  border-radius: 3px;
+  color: #31343e;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.backLink:hover,
+.backLink:focus {
+  background: linear-gradient(130deg, #41aae8, #41c5d5);
+}

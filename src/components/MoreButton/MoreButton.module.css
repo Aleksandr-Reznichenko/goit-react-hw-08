@@ -1,0 +1,62 @@
+.moreBtnContainer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.moreBtn {
+  border: 0;
+  background-color: transparent;
+  line-height: 0;
+  padding: 0;
+}
+
+.popover {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 10px;
+  padding: 2px 16px 2px 6px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.popover::after {
+  display: block;
+  content: '';
+  margin-left: 10px;
+  margin-right: -32px;
+  border-top: 6px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid white;
+}
+
+.editBtn,
+.deleteBtn {
+  width: 25px;
+  height: 25px;
+  border: 0;
+  background-color: transparent;
+  line-height: 0;
+}
+
+.iconEditBtn,
+.iconDeleteBtn {
+  width: 22px;
+  height: 22px;
+  color: #31343e;
+  transition: color 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.iconEditBtn:hover,
+.iconEditBtn:focus,
+.iconDeleteBtn:hover,
+.iconDeleteBtn:focus {
+  color: #41aae8;
+}
+
+.iconMore {
+  width: 18px;
+  height: 18px;
+  color: #31343e;
+}

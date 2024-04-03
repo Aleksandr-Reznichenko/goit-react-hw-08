@@ -1,0 +1,39 @@
+.main {
+  display: flex;
+  height: 100%;
+  border: 3px solid #2a497b;
+  border-top: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+  background-color: #e6effd;
+}
+
+.contacts {
+  width: 100%;
+}
+
+.contactsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 10px;
+  width: 450px;
+  height: 100%;
+}
+
+.loaderError {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20px;
+}
+
+.verticalStrip {
+  border-left: 1px solid grey;
+  margin: 20px 0;
+}
+
+.addContact {
+  width: 100%;
+}
