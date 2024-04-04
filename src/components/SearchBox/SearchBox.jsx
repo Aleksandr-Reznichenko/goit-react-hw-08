@@ -1,5 +1,5 @@
 import { changeFilter } from '../../redux/filters/slice';
-import { selectFilters } from '../../redux/filters/selectors';
+import { selectFilterName } from '../../redux/filters/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { GoSearch } from 'react-icons/go';
@@ -9,7 +9,7 @@ import ContactCount from '../ContactCount/ContactCount';
 import css from './SearchBox.module.css';
 
 export default function SearchBox() {
-  const { name } = useSelector(selectFilters);
+  const name = useSelector(selectFilterName);
   const dispatch = useDispatch();
 
   const handleChangeFilter = e => {

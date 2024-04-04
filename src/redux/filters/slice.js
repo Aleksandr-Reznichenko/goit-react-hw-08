@@ -1,6 +1,6 @@
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 import { selectContactsItems } from '../contacts/selectors';
-import { selectFilters } from '../filters/selectors';
+import { selectFilterName } from './selectors';
 
 const initialState = {
   name: '',
@@ -20,15 +20,15 @@ export const { changeFilter } = slice.actions;
 export const filtersReducer = slice.reducer;
 
 export const selectFilteredContacts = createSelector(
-  [selectContactsItems, selectFilters],
-  (contactsItems, filters) => {
+  [selectContactsItems, selectFilterName],
+  (contactsItems, filterName) => {
     const reversedContacts = contactsItems.slice().reverse();
 
-    return filters
+    return filterName
       ? reversedContacts.filter(
           contact =>
-            contact.name.toLowerCase().includes(filters.name.toLowerCase()) ||
-            String(contact.number).includes(filters.name)
+            contact.name.toLowerCase().includes(filterName.toLowerCase()) ||
+            String(contact.number).includes(filterName)
         )
       : reversedContacts;
   }

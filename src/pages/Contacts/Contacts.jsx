@@ -12,9 +12,9 @@ import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import Loader from '../../components/Loader/Loader';
 import SearchBox from '../../components/SearchBox/SearchBox';
 
-import css from './ContactsPage.module.css';
+import css from './Contacts.module.css';
 
-export default function ContactsPage() {
+export default function Contacts() {
   const dispatch = useDispatch();
   const loading = useSelector(selectContactsLoading);
   const errorMessage = useSelector(selectContactsErrorMessage);

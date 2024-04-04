@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import { useId } from 'react';
 import * as Yup from 'yup';
 
-import css from './RegisterForm.module.css';
+import css from './RegistrationForm.module.css';
 
-const RegisterFormSchema = Yup.object().shape({
+const RegistrationFormSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, 'Must be at least 3 characters long!')
     .max(30, 'Must be no more than 30 characters!')
@@ -29,7 +29,7 @@ const initialValues = {
   password: '',
 };
 
-export default function RegisterForm() {
+export default function RegistrationForm() {
   const nameId = useId();
   const emailId = useId();
   const passwordId = useId();
@@ -44,7 +44,7 @@ export default function RegisterForm() {
     <Formik
       initialValues={initialValues}
       onSubmit={handleSubmit}
-      validationSchema={RegisterFormSchema}
+      validationSchema={RegistrationFormSchema}
     >
       <Form className={css.container} autoComplete="off">
         <div className={css.form}>

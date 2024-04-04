@@ -7,17 +7,13 @@ import { RestrictedRoute } from '../RestrictedRoute/RestrictedRoute';
 import { PrivateRoute } from '../PrivateRoute/PrivateRoute';
 import Layout from '../Layout/Layout';
 
-const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
-const RegisterPage = lazy(() =>
-  import('../../pages/RegisterPage/RegisterPage')
+const Home = lazy(() => import('../../pages/Home/Home'));
+const Registration = lazy(() =>
+  import('../../pages/Registration/Registration')
 );
-const LoginPage = lazy(() => import('../../pages/LoginPage/LoginPage'));
-const ContactsPage = lazy(() =>
-  import('../../pages/ContactsPage/ContactsPage')
-);
-const NotFoundPage = lazy(() =>
-  import('../../pages/NotFoundPage/NotFoundPage')
-);
+const Login = lazy(() => import('../../pages/Login/Login'));
+const Contacts = lazy(() => import('../../pages/Contacts/Contacts'));
+const NotFound = lazy(() => import('../../pages/NotFound/NotFound'));
 
 export default function App() {
   const dispatch = useDispatch();
@@ -33,32 +29,29 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
+          <Route index element={<Home />} />
           <Route
             path="/register"
             element={
               <RestrictedRoute
                 redirectTo="/contacts"
-                component={<RegisterPage />}
+                component={<Registration />}
               />
             }
           />
           <Route
             path="/login"
             element={
-              <RestrictedRoute
-                redirectTo="/contacts"
-                component={<LoginPage />}
-              />
+              <RestrictedRoute redirectTo="/contacts" component={<Login />} />
             }
           />
           <Route
             path="/contacts"
             element={
-              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+              <PrivateRoute redirectTo="/login" component={<Contacts />} />
             }
           />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>
